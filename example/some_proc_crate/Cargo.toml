@@ -1,0 +1,15 @@
+[package]
+name = "some_proc_crate"
+version = "0.1.0"
+authors = ["Jasper Visser <jasper.visser@keylane.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0.*"
+proc_macro2_helper = { path = "../../../proc_macro2_helper" }
+syn = { version = "1.0.*", features = ["full", "extra-traits"] }
