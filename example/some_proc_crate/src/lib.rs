@@ -6,7 +6,7 @@ use syn::DeriveInput;
 pub fn entity(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input: DeriveInput = syn::parse(input).unwrap();
     let fields = proc_macro2_helper::named_struct_fields_from_data(input.data);
-    let attr_fields = proc_macro2_helper::filter_attributes(&fields, "someattr");
+    let attr_fields = proc_macro2_helper::filter_attributes_from_fields(&fields, "someattr");
 
     // Only 2 attributes have an attribute 'someattr'
     assert_eq!(2, attr_fields.len());

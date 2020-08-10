@@ -12,28 +12,30 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
     }
 }
 
-// Extracts attributes from a field
-pub fn filter_attributes<'a>(fields: &'a Vec<syn::Field>, att_to_find: &'static str) -> Vec<&'a syn::Field> {
+// Extracts attributes from fields
+pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_find: &'static str) -> Vec<&'a syn::Field> {
     fields
         .iter()
         .filter(|f|
             f.attrs
                 .iter()
-                .any(|att| {
-                    att
-                        .path
-                        .segments
-                        .iter()
-                        .any(|a| {
-                            // Dunno why I explicitly need to mention separate variables,
-                            // but that's the only way the compiler is happy
-                            let y = a.ident.to_string();
-                            let r = y.as_str();
-
-                            r == att_to_find
-                        })
-                }))
+                .any(|att| filter_attributes(att, att_to_find)))
         .collect()
+}
+
+pub fn filter_attributes(attr: &syn::Attribute, att_to_find: &str) -> bool {
+    attr
+        .path
+        .segments
+        .iter()
+        .any(|a| {
+            // Dunno why I explicitly need to mention separate variables,
+            // but that's the only way the compiler is happy
+            let y = a.ident.to_string();
+            let r = y.as_str();
+
+            r == att_to_find
+        })
 }
 
 #[cfg(test)]

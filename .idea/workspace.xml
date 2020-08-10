@@ -15,7 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b42cd8-9955-4647-9d9e-25f0b37a27a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/rust.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/rust.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +76,6 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Cargo Command.Test lib::test (1)" />
@@ -100,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596798343325</updated>
-      <workItem from="1596798344938" duration="3417000" />
+      <workItem from="1596798344938" duration="5027000" />
     </task>
     <servers />
   </component>
@@ -108,30 +103,39 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1597044356408">
+    <state x="2012" y="92" width="1736" height="976" key="DiffContextDialog" timestamp="1597051196226">
       <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2012" y="92" width="1736" height="976" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597051196226" />
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1597065898193">
+      <screen x="-1920" y="-263" width="1920" height="1160" />
     </state>
     <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597044356408" />
-    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1597044356408">
-      <screen x="1920" y="0" width="1920" height="1160" />
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom/1920.0.1280.693/-1920.-263.1920.1160/0.0.1920.1160@-1920.-263.1920.1160" timestamp="1597065898193" />
+    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1597065898193">
+      <screen x="-1920" y="-263" width="1920" height="1160" />
     </state>
     <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597044356408" />
-    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1597044356408">
-      <screen x="1920" y="0" width="1920" height="1160" />
+    <state width="1877" height="321" key="GridCell.Tab.0.center/1920.0.1280.693/-1920.-263.1920.1160/0.0.1920.1160@-1920.-263.1920.1160" timestamp="1597065898193" />
+    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1597065898193">
+      <screen x="-1920" y="-263" width="1920" height="1160" />
     </state>
     <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597044356408" />
-    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1597044356408">
-      <screen x="1920" y="0" width="1920" height="1160" />
+    <state width="1877" height="321" key="GridCell.Tab.0.left/1920.0.1280.693/-1920.-263.1920.1160/0.0.1920.1160@-1920.-263.1920.1160" timestamp="1597065898193" />
+    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1597065898193">
+      <screen x="-1920" y="-263" width="1920" height="1160" />
     </state>
     <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597044356408" />
-    <state x="2697" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597045434973">
-      <screen x="1920" y="0" width="1920" height="1160" />
+    <state width="1877" height="321" key="GridCell.Tab.0.right/1920.0.1280.693/-1920.-263.1920.1160/0.0.1920.1160@-1920.-263.1920.1160" timestamp="1597065898193" />
+    <state x="-1143" y="231" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597054976933">
+      <screen x="-1920" y="-263" width="1920" height="1160" />
     </state>
     <state x="2697" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597045434973" />
-    <state x="2587" y="313" width="585" height="534" key="find.popup" timestamp="1597044197546">
+    <state x="-1143" y="231" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1280.693/-1920.-263.1920.1160/0.0.1920.1160@-1920.-263.1920.1160" timestamp="1597054976933" />
+    <state x="2587" y="313" width="585" height="534" key="find.popup" timestamp="1597051102494">
       <screen x="1920" y="0" width="1920" height="1160" />
     </state>
-    <state x="2587" y="313" width="585" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597044197546" />
+    <state x="2587" y="313" width="585" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597051102494" />
     <state x="2602" y="492" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1597044388990">
       <screen x="1920" y="0" width="1920" height="1160" />
     </state>
