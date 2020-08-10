@@ -9,7 +9,7 @@ Various utility code to extract data that can be used with proc macro2
 
 ```toml
 [dependencies]
-proc_macro2_helper = "0.1.0"
+proc_macro2_helper = "0.1.*"
 ```
 
 #### License
