@@ -15,22 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b42cd8-9955-4647-9d9e-25f0b37a27a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/proc_macro2_helper.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE-APACHE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE-MIT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/some_proc_crate/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/some_proc_crate/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/some_proc_crate/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/rust.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/rust.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596798343325</updated>
-      <workItem from="1596798344938" duration="2593000" />
+      <workItem from="1596798344938" duration="3417000" />
     </task>
     <servers />
   </component>
@@ -139,6 +124,10 @@
       <screen x="1920" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597044356408" />
+    <state x="2697" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597045434973">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2697" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680/1920.0.1920.1160@1920.0.1920.1160" timestamp="1597045434973" />
     <state x="2587" y="313" width="585" height="534" key="find.popup" timestamp="1597044197546">
       <screen x="1920" y="0" width="1920" height="1160" />
     </state>
