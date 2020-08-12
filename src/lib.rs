@@ -48,11 +48,3 @@ pub fn filter_attributes(attr: &syn::Attribute, att_to_find: &str) -> bool {
             r == att_to_find
         })
 }
-
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test() {
-        // TODO
-    }
-}
