@@ -1,3 +1,5 @@
+use syn::Attribute;
+
 // Extracts named struct fields from data
 // Panics if either the data does not represent a struct or the struct is a unit struct or tuple struct
 pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
@@ -31,16 +33,20 @@ pub fn filter_attributes_from_variants<'a>(variants: &'a Vec<syn::Variant>, att_
 pub fn filter_attributes(attrs: &Vec<syn::Attribute>, att_to_find: &str) -> bool {
     attrs
         .iter()
-        .any(|attr| attr
-            .path
-            .segments
-            .iter()
-            .any(|a| {
-                // Dunno why I explicitly need to mention separate variables,
-                // but that's the only way the compiler is happy
-                let y = a.ident.to_string();
-                let r = y.as_str();
+        .any(|a| filter_attribute(a, att_to_find))
+}
 
-                r == att_to_find
-            }))
+pub fn filter_attribute(attr: &Attribute, att_to_find: &str) -> bool {
+    attr
+        .path
+        .segments
+        .iter()
+        .any(|a| {
+            // Dunno why I explicitly need to mention separate variables,
+            // but that's the only way the compiler is happy
+            let y = a.ident.to_string();
+            let r = y.as_str();
+
+            r == att_to_find
+        })
 }
