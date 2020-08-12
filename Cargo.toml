@@ -1,6 +1,6 @@
 [package]
 name = "proc_macro2_helper"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Jasper Visser <jasperav@hotmail.com>"]
 edition = "2018"
 description = "Various utility code to extract data that can be used with proc macro2"
@@ -12,5 +12,5 @@ repository = "https://github.com/jasperav/proc_macro2_helper"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-proc-macro2 = "1.0.*"
-syn = { version = "1.0.*", features = ["extra-traits", "full"] }
+proc-macro2 = "1.0"
+syn = { version = "1.0", features = ["extra-traits", "full"] }

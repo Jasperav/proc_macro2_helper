@@ -16,10 +16,7 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
 pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_find: &'static str) -> Vec<&'a syn::Field> {
     fields
         .iter()
-        .filter(|f|
-            f.attrs
-                .iter()
-                .any(|att| filter_attributes(att, att_to_find)))
+        .filter(|f| !filter_attributes(&f.attrs, att_to_find).is_empty())
         .collect()
 }
 
@@ -27,24 +24,24 @@ pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_fin
 pub fn filter_attributes_from_variants<'a>(variants: &'a Vec<syn::Variant>, att_to_find: &'static str) -> Vec<&'a syn::Variant> {
     variants
         .iter()
-        .filter(|f|
-            f.attrs
-                .iter()
-                .any(|att| filter_attributes(att, att_to_find)))
+        .filter(|f| !filter_attributes(&f.attrs, att_to_find).is_empty())
         .collect()
 }
 
-pub fn filter_attributes(attr: &syn::Attribute, att_to_find: &str) -> bool {
-    attr
-        .path
-        .segments
+pub fn filter_attributes<'a>(attrs: &'a Vec<syn::Attribute>, att_to_find: &str) -> Vec<&'a syn::Attribute> {
+    attrs
         .iter()
-        .any(|a| {
-            // Dunno why I explicitly need to mention separate variables,
-            // but that's the only way the compiler is happy
-            let y = a.ident.to_string();
-            let r = y.as_str();
+        .filter(|attr| attr
+            .path
+            .segments
+            .iter()
+            .any(|a| {
+                // Dunno why I explicitly need to mention separate variables,
+                // but that's the only way the compiler is happy
+                let y = a.ident.to_string();
+                let r = y.as_str();
 
-            r == att_to_find
-        })
+                r == att_to_find
+            }))
+        .collect()
 }
