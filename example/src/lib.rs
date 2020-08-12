@@ -1,12 +1,22 @@
-use some_proc_crate::SomeProcCrate;
+use some_proc_crate::SomeProcCrateStruct;
+use some_proc_crate::SomeProcCrateEnum;
 
-#[derive(SomeProcCrate)]
+#[derive(SomeProcCrateStruct)]
 struct SomeStruct {
     field0: i32,
     #[someattr]
     field1: &'static str,
     #[someattr]
     field2: String
+}
+
+#[derive(SomeProcCrateEnum)]
+enum SomeEnum {
+    Variant0,
+    #[someattr]
+    Variant1,
+    #[someattr]
+    Variant2
 }
 
 #[cfg(test)]

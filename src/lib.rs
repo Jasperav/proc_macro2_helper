@@ -23,6 +23,17 @@ pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_fin
         .collect()
 }
 
+// Extracts attributes from variants
+pub fn filter_attributes_from_variants<'a>(variants: &'a Vec<syn::Variant>, att_to_find: &'static str) -> Vec<&'a syn::Variant> {
+    variants
+        .iter()
+        .filter(|f|
+            f.attrs
+                .iter()
+                .any(|att| filter_attributes(att, att_to_find)))
+        .collect()
+}
+
 pub fn filter_attributes(attr: &syn::Attribute, att_to_find: &str) -> bool {
     attr
         .path
