@@ -16,7 +16,7 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
 pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_find: &'static str) -> Vec<&'a syn::Field> {
     fields
         .iter()
-        .filter(|f| !filter_attributes(&f.attrs, att_to_find).is_empty())
+        .filter(|f| filter_attributes(&f.attrs, att_to_find))
         .collect()
 }
 
@@ -24,14 +24,14 @@ pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_fin
 pub fn filter_attributes_from_variants<'a>(variants: &'a Vec<syn::Variant>, att_to_find: &'static str) -> Vec<&'a syn::Variant> {
     variants
         .iter()
-        .filter(|f| !filter_attributes(&f.attrs, att_to_find).is_empty())
+        .filter(|f| filter_attributes(&f.attrs, att_to_find))
         .collect()
 }
 
-pub fn filter_attributes<'a>(attrs: &'a Vec<syn::Attribute>, att_to_find: &str) -> Vec<&'a syn::Attribute> {
+pub fn filter_attributes(attrs: &Vec<syn::Attribute>, att_to_find: &str) -> bool {
     attrs
         .iter()
-        .filter(|attr| attr
+        .any(|attr| attr
             .path
             .segments
             .iter()
@@ -43,5 +43,4 @@ pub fn filter_attributes<'a>(attrs: &'a Vec<syn::Attribute>, att_to_find: &str) 
 
                 r == att_to_find
             }))
-        .collect()
 }
