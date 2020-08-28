@@ -15,7 +15,10 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
 }
 
 // Extracts attributes from fields
-pub fn filter_attributes_from_fields<'a>(fields: &'a [syn::Field], att_to_find: &'static str) -> Vec<&'a syn::Field> {
+pub fn filter_attributes_from_fields<'a>(
+    fields: &'a [syn::Field],
+    att_to_find: &'static str,
+) -> Vec<&'a syn::Field> {
     fields
         .iter()
         .filter(|f| attributes_contains(&f.attrs, att_to_find))
@@ -23,7 +26,10 @@ pub fn filter_attributes_from_fields<'a>(fields: &'a [syn::Field], att_to_find: 
 }
 
 // Extracts attributes from variants
-pub fn filter_attributes_from_variants<'a>(variants: &'a [syn::Variant], att_to_find: &'static str) -> Vec<&'a syn::Variant> {
+pub fn filter_attributes_from_variants<'a>(
+    variants: &'a [syn::Variant],
+    att_to_find: &'static str,
+) -> Vec<&'a syn::Variant> {
     variants
         .iter()
         .filter(|f| attributes_contains(&f.attrs, att_to_find))
@@ -31,22 +37,16 @@ pub fn filter_attributes_from_variants<'a>(variants: &'a [syn::Variant], att_to_
 }
 
 pub fn attributes_contains(attrs: &[syn::Attribute], att_to_find: &str) -> bool {
-    attrs
-        .iter()
-        .any(|a| attribute_contains(a, att_to_find))
+    attrs.iter().any(|a| attribute_contains(a, att_to_find))
 }
 
 pub fn attribute_contains(attr: &Attribute, att_to_find: &str) -> bool {
-    attr
-        .path
-        .segments
-        .iter()
-        .any(|a| {
-            // Dunno why I explicitly need to mention separate variables,
-            // but that's the only way the compiler is happy
-            let y = a.ident.to_string();
-            let r = y.as_str();
+    attr.path.segments.iter().any(|a| {
+        // Dunno why I explicitly need to mention separate variables,
+        // but that's the only way the compiler is happy
+        let y = a.ident.to_string();
+        let r = y.as_str();
 
-            r == att_to_find
-        })
+        r == att_to_find
+    })
 }
