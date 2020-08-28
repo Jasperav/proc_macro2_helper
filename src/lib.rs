@@ -15,7 +15,7 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
 }
 
 // Extracts attributes from fields
-pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_find: &'static str) -> Vec<&'a syn::Field> {
+pub fn filter_attributes_from_fields<'a>(fields: &'a [syn::Field], att_to_find: &'static str) -> Vec<&'a syn::Field> {
     fields
         .iter()
         .filter(|f| attributes_contains(&f.attrs, att_to_find))
@@ -23,14 +23,14 @@ pub fn filter_attributes_from_fields<'a>(fields: &'a Vec<syn::Field>, att_to_fin
 }
 
 // Extracts attributes from variants
-pub fn filter_attributes_from_variants<'a>(variants: &'a Vec<syn::Variant>, att_to_find: &'static str) -> Vec<&'a syn::Variant> {
+pub fn filter_attributes_from_variants<'a>(variants: &'a [syn::Variant], att_to_find: &'static str) -> Vec<&'a syn::Variant> {
     variants
         .iter()
         .filter(|f| attributes_contains(&f.attrs, att_to_find))
         .collect()
 }
 
-pub fn attributes_contains(attrs: &Vec<syn::Attribute>, att_to_find: &str) -> bool {
+pub fn attributes_contains(attrs: &[syn::Attribute], att_to_find: &str) -> bool {
     attrs
         .iter()
         .any(|a| attribute_contains(a, att_to_find))
