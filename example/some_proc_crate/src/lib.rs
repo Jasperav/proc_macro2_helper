@@ -1,5 +1,5 @@
 use proc_macro::TokenStream;
-use syn::{DeriveInput, Data};
+use syn::DeriveInput;
 
 // This proc macro is only used by the example folder for struct SomeStruct
 #[proc_macro_derive(SomeProcCrateStruct, attributes(someattr))]
@@ -18,10 +18,7 @@ pub fn for_struct(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 #[proc_macro_derive(SomeProcCrateEnum, attributes(someattr))]
 pub fn for_enum(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input: DeriveInput = syn::parse(input).unwrap();
-    let variants = match input.data {
-        Data::Enum(e) => e.variants.into_iter().collect::<Vec<_>>(),
-        _ => panic!()
-    };
+    let variants = proc_macro2_helper::enum_data(input);
     let attrs = proc_macro2_helper::filter_attributes_from_variants(&variants, "someattr");
 
     // Only 2 attributes have an attribute 'someattr'

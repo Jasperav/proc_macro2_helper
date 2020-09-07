@@ -1,7 +1,14 @@
-use syn::Attribute;
+use syn::{Attribute, DeriveInput, Data, Variant};
 
-// Extracts named struct fields from data
-// Panics if either the data does not represent a struct or the struct is a unit struct or tuple struct
+pub fn enum_data(from: DeriveInput) -> Vec<Variant> {
+    match from.data {
+        Data::Enum(e) => e.variants.into_iter().collect(),
+        _ => panic!("Expected enum"),
+    }
+}
+
+/// Extracts named struct fields from data
+/// Panics if either the data does not represent a struct or the struct is a unit struct or tuple struct
 pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
     if let syn::Data::Struct(e) = data {
         if let syn::Fields::Named(e) = e.fields {
@@ -14,7 +21,7 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
     }
 }
 
-// Extracts attributes from fields
+/// Extracts attributes from fields
 pub fn filter_attributes_from_fields<'a>(
     fields: &'a [syn::Field],
     att_to_find: &'static str,
@@ -25,7 +32,7 @@ pub fn filter_attributes_from_fields<'a>(
         .collect()
 }
 
-// Extracts attributes from variants
+/// Extracts attributes from variants
 pub fn filter_attributes_from_variants<'a>(
     variants: &'a [syn::Variant],
     att_to_find: &'static str,
