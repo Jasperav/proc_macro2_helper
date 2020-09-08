@@ -18,7 +18,7 @@ pub fn for_struct(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 #[proc_macro_derive(SomeProcCrateEnum, attributes(someattr))]
 pub fn for_enum(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input: DeriveInput = syn::parse(input).unwrap();
-    let variants = proc_macro2_helper::enum_data(input);
+    let variants = proc_macro2_helper::enum_data(input.data);
     let attrs = proc_macro2_helper::filter_attributes_from_variants(&variants, "someattr");
 
     // Only 2 attributes have an attribute 'someattr'

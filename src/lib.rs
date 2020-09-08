@@ -1,7 +1,7 @@
-use syn::{Attribute, DeriveInput, Data, Variant};
+use syn::{Attribute, Data, Variant};
 
-pub fn enum_data(from: DeriveInput) -> Vec<Variant> {
-    match from.data {
+pub fn enum_data(data: Data) -> Vec<Variant> {
+    match data {
         Data::Enum(e) => e.variants.into_iter().collect(),
         _ => panic!("Expected enum"),
     }
