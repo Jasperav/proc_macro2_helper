@@ -21,6 +21,13 @@ pub fn named_struct_fields_from_data(data: syn::Data) -> Vec<syn::Field> {
     }
 }
 
+pub fn contains_ident(fields: &[syn::Field], ident: &str) -> bool {
+    fields
+        .iter()
+        .filter_map(|f| f.ident.as_ref())
+        .any(|i| i.to_string() == ident)
+}
+
 /// Extracts attributes from fields
 pub fn filter_attributes_from_fields<'a>(
     fields: &'a [syn::Field],

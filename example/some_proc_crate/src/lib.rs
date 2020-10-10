@@ -10,6 +10,8 @@ pub fn for_struct(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
     // Only 2 attributes have an attribute 'someattr'
     assert_eq!(2, attrs.len());
+    assert!(proc_macro2_helper::contains_ident(&fields, "field0"));
+    assert!(!proc_macro2_helper::contains_ident(&fields, "this field does not exists"));
 
     TokenStream::new()
 }
