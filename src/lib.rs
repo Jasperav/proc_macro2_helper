@@ -25,7 +25,7 @@ pub fn contains_ident(fields: &[syn::Field], ident: &str) -> bool {
     fields
         .iter()
         .filter_map(|f| f.ident.as_ref())
-        .any(|i| i.to_string() == ident)
+        .any(|i| *i == ident)
 }
 
 /// Extracts attributes from fields
