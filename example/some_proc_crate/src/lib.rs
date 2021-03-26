@@ -8,6 +8,14 @@ pub fn for_struct(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let fields = proc_macro2_helper::named_struct_fields_from_data(input.data);
     let attrs = proc_macro2_helper::filter_attributes_from_fields(&fields, "someattr");
 
+    // Only 1 field should have the option type
+    let options = fields
+        .iter()
+        .filter(|field| proc_macro2_helper::has_first_type_option(field))
+        .count();
+
+    assert_eq!(1, options);
+
     // Only 2 attributes have an attribute 'someattr'
     assert_eq!(2, attrs.len());
     assert!(proc_macro2_helper::contains_ident(&fields, "field0"));

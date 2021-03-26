@@ -1,4 +1,4 @@
-use syn::{Attribute, Data, Variant};
+use syn::{Attribute, Data, Variant, Field, Type};
 
 pub fn enum_data(data: Data) -> Vec<Variant> {
     match data {
@@ -26,6 +26,19 @@ pub fn contains_ident(fields: &[syn::Field], ident: &str) -> bool {
         .iter()
         .filter_map(|f| f.ident.as_ref())
         .any(|i| *i == ident)
+}
+
+pub fn has_first_type_option(field: &Field) -> bool {
+    has_first_type(field, "Option")
+}
+
+pub fn has_first_type(field: &Field, ty: &str) -> bool {
+    match &field.ty {
+        Type::Path(path) => {
+            path.path.segments[0].ident.to_string() == ty
+        },
+        _ => false
+    }
 }
 
 /// Extracts attributes from fields

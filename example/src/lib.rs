@@ -8,7 +8,8 @@ struct SomeStruct {
     #[someattr]
     field1: &'static str,
     #[someattr]
-    field2: String
+    field2: String,
+    nullable: Option<i32>
 }
 
 #[allow(dead_code)]
