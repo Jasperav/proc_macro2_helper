@@ -48,7 +48,7 @@ pub fn has_first_type(field: &Field, ty: &str) -> bool {
             } else {
                 false
             }
-        },
+        }
         _ => false,
     }
 }
