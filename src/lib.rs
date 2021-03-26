@@ -1,4 +1,4 @@
-use syn::{Attribute, Data, Variant, Field, Type};
+use syn::{Attribute, Data, Field, Type, Variant};
 
 pub fn enum_data(data: Data) -> Vec<Variant> {
     match data {
@@ -34,10 +34,8 @@ pub fn has_first_type_option(field: &Field) -> bool {
 
 pub fn has_first_type(field: &Field, ty: &str) -> bool {
     match &field.ty {
-        Type::Path(path) => {
-            path.path.segments[0].ident.to_string() == ty
-        },
-        _ => false
+        Type::Path(path) => path.path.segments[0].ident == ty,
+        _ => false,
     }
 }
 
