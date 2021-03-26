@@ -34,7 +34,21 @@ pub fn has_first_type_option(field: &Field) -> bool {
 
 pub fn has_first_type(field: &Field, ty: &str) -> bool {
     match &field.ty {
-        Type::Path(path) => path.path.segments[0].ident == ty,
+        Type::Path(path) => {
+            let ident = &path.path.segments[0].ident;
+
+            if ident == ty {
+                true
+            } else if ident == "std" {
+                if path.path.segments.len() < 3 {
+                    return false;
+                }
+
+                path.path.segments[2].ident == ty
+            } else {
+                false
+            }
+        },
         _ => false,
     }
 }
