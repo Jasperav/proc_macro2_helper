@@ -9,7 +9,8 @@ struct SomeStruct {
     field1: &'static str,
     #[someattr]
     field2: String,
-    nullable: Option<i32>
+    nullable: Option<i32>,
+    qualified_option: std::option::Option<i32>,
 }
 
 #[allow(dead_code)]
