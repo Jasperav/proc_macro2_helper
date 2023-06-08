@@ -66,7 +66,7 @@ pub fn attributes_contains(attrs: &[syn::Attribute], att_to_find: &str) -> bool 
 }
 
 pub fn attribute_contains(attr: &Attribute, att_to_find: &str) -> bool {
-    attr.path.segments.iter().any(|a| {
+    attr.path().segments.iter().any(|a| {
         // Dunno why I explicitly need to mention separate variables,
         // but that's the only way the compiler is happy
         let y = a.ident.to_string();
