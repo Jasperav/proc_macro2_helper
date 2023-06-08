@@ -1,6 +1,6 @@
 [package]
 name = "proc_macro2_helper"
-version = "0.2.9"
+version = "0.2.10"
 authors = ["Jasper Visser <jasperav@hotmail.com>"]
 edition = "2021"
 description = "Various utility code to extract data that can be used with proc macro2"
